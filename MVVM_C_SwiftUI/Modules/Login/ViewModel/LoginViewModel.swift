@@ -11,4 +11,16 @@ class LoginViewModel: ObservableObject {
     
     @Published var email: String = ""
     @Published var password: String = ""
+    
+    func onTapLogin() {
+        
+    }
+    
+    func onTapSignUp() {
+        
+    }
+    
+    func onTapForgotPassword() {
+        
+    }
 }

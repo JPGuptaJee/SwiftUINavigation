@@ -28,18 +28,23 @@ struct LoginPage: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(.black.opacity(0.5), lineWidth: 1)
                     }
+                    Button(action: vm.onTapLogin, label: {
+                        Text("Login")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(.blue)
+                            .containerShape(.rect(cornerRadius: 10))
+                            .foregroundStyle(.white)
+                    })
+                    
                     HStack {
                         Spacer()
-                        Button("Forgot password?") {
-                            
-                        }
+                        Button("Forgot password?", action: vm.onTapForgotPassword)
                     }
                     Spacer()
                     HStack {
                         Text("Don't have an account?")
-                        Button("Signup") {
-                            
-                        }
+                        Button("Signup", action: vm.onTapSignUp)
                     }
                 }
                 .padding(.horizontal)
