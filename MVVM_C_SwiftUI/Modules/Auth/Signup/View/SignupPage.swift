@@ -1,15 +1,15 @@
 //
-//  LoginPage.swift
+//  SignupPage.swift
 //  MVVM_C_SwiftUI
 //
-//  Created by Jaiprakash Gupta on 22/11/24.
+//  Created by Jaiprakash Gupta on 24/11/24.
 //
 
 import SwiftUI
 
-struct LoginPage: View {
+struct SignupPage: View {
     
-    @StateObject var vm: LoginViewModel = LoginViewModel()
+    @StateObject private var vm: SignupViewModel = SignupViewModel()
     
     var body: some View {
         GeometryReader { geometry in
@@ -20,16 +20,18 @@ struct LoginPage: View {
                         .frame(width: 150, height: 150)
                         .padding(.vertical, 50)
                     Group {
-                        TextField("Ermail", text: $vm.email)
+                        TextField("Name", text: $vm.name)
+                        TextField("Email", text: $vm.email)
                         SecureField("Password", text: $vm.password)
+                        SecureField("Confirm password", text: $vm.confirmPassword)
                     }
                     .padding()
                     .background {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(.black.opacity(0.5), lineWidth: 1)
                     }
-                    Button(action: vm.onTapLogin, label: {
-                        Text("Login")
+                    Button(action: vm.onTapSignup, label: {
+                        Text("Sign Up")
                             .frame(maxWidth: .infinity)
                             .padding()
                             .background(.blue)
@@ -37,14 +39,10 @@ struct LoginPage: View {
                             .foregroundStyle(.white)
                     })
                     
-                    HStack {
-                        Spacer()
-                        Button("Forgot password?", action: vm.onTapForgotPassword)
-                    }
                     Spacer()
                     HStack {
-                        Text("Don't have an account?")
-                        Button("Signup", action: vm.onTapSignUp)
+                        Text("Already have an account?")
+                        Button("Login", action: vm.onTapLogin)
                     }
                 }
                 .padding(.horizontal)
@@ -52,10 +50,9 @@ struct LoginPage: View {
             }
             .scrollBounceBehavior(.basedOnSize)
         }
-        
     }
 }
 
 #Preview {
-    LoginPage()
+    SignupPage()
 }
