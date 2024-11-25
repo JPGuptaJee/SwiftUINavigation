@@ -13,11 +13,11 @@ class LoginViewModel: ObservableObject {
     @Published var password: String = ""
     
     func onTapLogin() {
-        
+        NavigationService.shared.updateLoginStatus(true)
     }
     
     func onTapSignUp() {
-        
+        NavigationService.shared.push(to: .auth(.signup))
     }
     
     func onTapForgotPassword() {

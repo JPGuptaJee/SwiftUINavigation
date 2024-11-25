@@ -14,11 +14,11 @@ class SignupViewModel: ObservableObject {
     @Published var confirmPassword: String = ""
     
     func onTapSignup() {
-        
+        NavigationService.shared.updateLoginStatus(true)
     }
     
     func onTapLogin() {
-        
+        NavigationService.shared.pop()
     }
     
 }

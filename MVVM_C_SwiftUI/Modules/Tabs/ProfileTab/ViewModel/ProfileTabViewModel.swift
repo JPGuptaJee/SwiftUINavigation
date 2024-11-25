@@ -9,4 +9,7 @@ import Foundation
 
 class ProfileTabViewModel: ObservableObject {
     
+    func onTapLogout() {
+        NavigationService.shared.updateLoginStatus(false)
+    }
 }

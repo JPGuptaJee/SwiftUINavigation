@@ -12,7 +12,7 @@ struct ProfileTabPage: View {
     @StateObject private var vm: ProfileTabViewModel = .init()
     
     var body: some View {
-        Text("Profile")
+        Button("Logout", action: vm.onTapLogout)
     }
 }
 

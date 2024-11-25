@@ -52,7 +52,6 @@ struct LoginPage: View {
             }
             .scrollBounceBehavior(.basedOnSize)
         }
-        
     }
 }
 
