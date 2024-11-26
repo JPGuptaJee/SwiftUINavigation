@@ -12,7 +12,11 @@ struct HomeTabPage: View {
     @StateObject private var vm: HomeTabViewModel = HomeTabViewModel()
     
     var body: some View {
-        Text("Home")
+        VStack {
+            Button("Go to Screen 1") {
+                NavigationService.shared.push(to: .dashboard(.home(.homeScreen1)))
+            }
+        }
     }
 }
 

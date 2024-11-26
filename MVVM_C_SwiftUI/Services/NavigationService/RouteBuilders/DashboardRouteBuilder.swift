@@ -38,13 +38,13 @@ struct HomeRouteBuilder {
     func configure() -> some View {
         switch route {
         case .homeScreen1:
-            Text("HomeScreen1")
+            HomeScreen1()
         case .homeScreen2:
-            Text("HomeScreen2")
+            HomeScreen2()
         case .homeScreen3:
-            Text("HomeScreen3")
+            HomeScreen3()
         case .homeScreen4:
-            Text("HomeScreen4")
+            HomeScreen4()
         }
     }
 }
